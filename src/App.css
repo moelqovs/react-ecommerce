@@ -1,10 +1,22 @@
 .App {
   text-align: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
+.Brand {
+  display: flex;
+  height: 25vmin;
+  width: 100%;
   pointer-events: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgBrand{
+  height: 200px;
+  width: 200px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
