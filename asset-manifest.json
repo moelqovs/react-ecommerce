@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/moelqovs/react-ecommerce/static/css/main.a76ffe99.css",
+    "main.js": "/moelqovs/react-ecommerce/static/js/main.72f1ff36.js",
+    "static/media/Brand.png": "/moelqovs/react-ecommerce/static/media/Brand.bad4f5f6962575a42b8f.png",
+    "index.html": "/moelqovs/react-ecommerce/index.html",
+    "main.a76ffe99.css.map": "/moelqovs/react-ecommerce/static/css/main.a76ffe99.css.map",
+    "main.72f1ff36.js.map": "/moelqovs/react-ecommerce/static/js/main.72f1ff36.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a76ffe99.css",
+    "static/js/main.72f1ff36.js"
+  ]
+}
