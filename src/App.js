@@ -13,7 +13,7 @@ function App() {
           <img src={Brand} alt='Brand' className='imgBrand'/>
         </div>
       <NavBar/>
-      <ItemListContainer greeting="hola soy greeting"/>
+      <ItemListContainer/>
     </div>
   );
 }

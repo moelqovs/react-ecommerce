@@ -1,0 +1,74 @@
+[
+    {
+        "id":"1",
+        "foto": "../img/cama1.jpg",
+        "nombre":"Cama Doble 1",  
+        "precio":20000 
+    },
+    {
+        "id":"2",
+        "foto": "../img/cama2.jpg",
+        "nombre":"Cama Doble 2",  
+        "precio":30000 
+    },
+    {
+        "id":"3",
+        "foto": "../img/cama3.jpg",
+        "nombre":"Cama Doble 3",  
+        "precio":40000 
+    },
+    {
+        "id":"4",
+        "foto": "../img/sofa1.jpg",
+        "nombre":"Sofá 1",  
+        "precio":50000 
+    },
+    {
+        "id":"5",
+        "foto": "../img/sofa2.jpg",
+        "nombre":"Sofá 2",  
+        "precio":60000
+    },
+    {
+        "id":"6",
+        "foto": "../img/sofa3.jpg",
+        "nombre":"Sofá 3",  
+        "precio":70000
+    },
+    {
+        "id":"7",
+        "foto": "../img/comedor1.jpg",
+        "nombre":"Comedor 1",  
+        "precio":55000
+    },
+    {
+        "id":"8",
+        "foto": "../img/comedor2.jpg",
+        "nombre":"Comedor 2",  
+        "precio":44000
+    },
+    {
+        "id":"9",
+        "foto": "../img/comedor3.jpg",
+        "nombre":"Comedor 3",  
+        "precio":66000
+    },
+    {
+        "id":"10",
+        "foto": "../img/deco1.jpg",
+        "nombre":"Decoración 1",  
+        "precio":80000
+    },
+    {
+        "id":"11",
+        "foto": "../img/deco2.jpg",
+        "nombre":"Decoración 2",  
+        "precio":90000 
+    },
+    {
+        "id":"12",
+        "foto": "../img/deco3.jpg",
+        "nombre":"Decoración 3",  
+        "precio":100000 
+    }
+]
