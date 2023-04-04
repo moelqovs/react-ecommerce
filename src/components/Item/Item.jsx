@@ -9,7 +9,7 @@ export const Item = ({producto}) => {
     return (
         <div className="card-container">
         <Card style={{ width: '18rem' }}>
-            <Card.Img src={producto.image} alt={producto.id} variant="top" className="foto" />
+            <Card.Img src={process.env.PUBLIC_URL+producto.image} alt={producto.id} variant="top" />
                 <Card.Body className="card-body">
                     <Card.Title> {producto.nombre} </Card.Title>
                     <Card.Text> $ {producto.precio} </Card.Text>
