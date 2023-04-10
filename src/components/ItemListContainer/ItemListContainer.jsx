@@ -11,8 +11,6 @@ export const ItemListContainer = () => {
     const [productos, setProductos] = useState ([]);
     const {cid} = useParams ()
 
-    console.log(cid);
-    console.log(productos);
 
     const pedirProductos = () => {
         return new Promise ((resolve, reject) => {

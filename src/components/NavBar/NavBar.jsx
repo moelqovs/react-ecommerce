@@ -18,11 +18,11 @@ export const NavBar = () => {
                     style={{ maxHeight: '100px'}}
                     navbarScroll
                 >
-                    <Link to='/' className='me-auto text-decoration-none text-light enlace'> Home </Link>
-                    <Link to='/categoria/camas' className='me-auto text-decoration-none text-light enlace'>Camas</Link>
-                    <Link to='/categoria/sofas' className='me-auto text-decoration-none text-light enlace'>Sofás</Link>
-                    <Link to='/categoria/comedor' className='me-auto text-decoration-none text-light enlace'>Comedor</Link>
-                    <Link to='/categoria/decoracion' className='me-auto text-decoration-none text-light enlace'>Decoración</Link>
+                    <Link to='/' className='me-auto text-decoration-none text-light m-lg-4 enlace'> Home </Link>
+                    <Link to='/categoria/camas' className='me-auto text-decoration-none text-light m-lg-4 enlace'>Camas</Link>
+                    <Link to='/categoria/sofas' className='me-auto text-decoration-none text-light m-lg-4 enlace'>Sofás</Link>
+                    <Link to='/categoria/comedor' className='me-auto text-decoration-none text-light m-lg-4 enlace'>Comedor</Link>
+                    <Link to='/categoria/decoracion' className='me-auto text-decoration-none text-light m-lg-4 enlace'>Decoración</Link>
                 </Nav>
                 <Link to='/cart'>
                     <Form className="d-flex">
