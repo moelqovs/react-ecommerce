@@ -2,32 +2,47 @@ import "./ItemListContainer.css";
 import data from "../data/productos.json";
 import { useEffect, useState } from "react";
 import { ItemList } from "../ItemList/ItemList";
-
+import { useParams } from "react-router-dom";
 
 
 
 export const ItemListContainer = () => {
     
     const [productos, setProductos] = useState ([]);
+    const {cid} = useParams ()
+
+    console.log(cid);
+    console.log(productos);
 
     const pedirProductos = () => {
         return new Promise ((resolve, reject) => {
-            resolve(data)
+            setTimeout(() => {
+                resolve(data)
+            }, 1300);
         })
     }
 
     useEffect (()=>{
-        pedirProductos() 
-        .then((respuesta) => {
-            setProductos (respuesta);
-        })
-    },[])
+
+        if(cid){
+            pedirProductos() 
+            .then((respuesta=>setProductos(respuesta.filter(productos=>productos.categoria===cid))));
+        }else{
+            pedirProductos() 
+            .then((respuesta) => {
+                setProductos (respuesta);
+            })
+        } 
+    },[cid])
+
 
 
     return (
-        <div>
+        <div className="title-container">
             <h1> Nuestros Productos </h1>
-            <ItemList productos={productos}/>
+            <div className="d-flex flex-wrap flex-row cards-container">
+                <ItemList productos={productos} />
+            </div>
         </div>
     );    
 }

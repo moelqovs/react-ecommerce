@@ -2,73 +2,80 @@
     {
         "id":"1",
         "image": "/models/cama1.jpg",
-        "nombre":"Cama Doble 1",  
+        "nombre":"Cama Doble I",  
+        "categoria":"Camas",
+        "cantidad":10,
         "precio":20000 
     },
     {
         "id":"2",
         "image": "/models/cama2.jpg",
-        "nombre":"Cama Doble 2",  
+        "nombre":"Cama Doble II",
+        "categoria":"Camas",
+        "cantidad":10,  
         "precio":30000 
     },
     {
         "id":"3",
         "image": "/models/cama3.jpg",
-        "nombre":"Cama Doble 3",  
+        "nombre":"Cama Doble III",
+        "categoria":"Camas",
         "precio":40000 
     },
     {
         "id":"4",
         "image": "/models/sofa1.jpg",
-        "nombre":"Sofá 1",  
+        "nombre":"Sofá I",  
+        "categoria":"Sofás",
         "precio":50000 
     },
     {
         "id":"5",
         "image": "/models/sofa2.jpg",
-        "nombre":"Sofá 2",  
+        "nombre":"Sofá II", 
+        "categoria":"Sofás",
         "precio":60000
     },
     {
         "id":"6",
         "image": "/models/sofa3.jpg",
-        "nombre":"Sofá 3",  
+        "nombre":"Sofá III", 
+        "categoria":"Sofás",
         "precio":70000
     },
     {
         "id":"7",
         "image": "/models/comedor1.jpg",
-        "nombre":"Comedor 1",  
+        "nombre":"Comedor I", 
+        "categoria":"Comedor",
         "precio":55000
-    },
-    {
-        "id":"8",
-        "image": "/models/comedor2.jpg.jpg",
-        "nombre":"Comedor 2",  
-        "precio":44000
     },
     {
         "id":"9",
         "image": "/models/comedor3.jpg",
-        "nombre":"Comedor 3",  
+        "nombre":"Comedor II", 
+        "categoria":"Comedor",
         "precio":66000
     },
     {
         "id":"10",
         "image": "/models/deco1.jpg",
-        "nombre":"Decoración 1",  
+        "nombre":"Decoración I",
+        "categoria":"Decoración",
         "precio":80000
     },
     {
         "id":"11",
         "image": "/models/deco2.jpg",
-        "nombre":"Decoración 2",  
+        "nombre":"Decoración II",  
+        "categoria":"Decoración",
         "precio":90000 
     },
     {
         "id":"12",
         "image": "/models/deco3.jpg",
-        "nombre":"Decoración 3",  
+        "nombre":"Decoración III",  
+        "categoria":"Decoración",
         "precio":100000 
     }
 ]

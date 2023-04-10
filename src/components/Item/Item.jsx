@@ -1,32 +1,34 @@
 import { Button, Card } from "react-bootstrap";
 import  "./Item.css";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
 
 
 
 export const Item = ({producto}) => {
 
     return (
-        <div className="card-container">
-        <Card style={{ width: '18rem' }}>
-            <Card.Img src={process.env.PUBLIC_URL+producto.image} alt={producto.id} variant="top" />
-                <Card.Body className="card-body">
-                    <Card.Title> {producto.nombre} </Card.Title>
-                    <Card.Text> $ {producto.precio} </Card.Text>
-                    <Button variant="outline-warning">Agregar</Button>
-                </Card.Body>
-            </Card>
+        <div>
+                <Card style={{ width: '18rem' }}>
+                    <Card.Img src={process.env.PUBLIC_URL+producto.image} alt={producto.id} variant="top" style={{ height: '20rem' }}/>
+                        <Card.Body className="card-body">
+                            <Card.Title className="text-center"> {producto.nombre} </Card.Title>
+                            <Card.Text className="text-center"> $ {producto.precio} </Card.Text>
+                            <hr/>
+                            <div className="text-center">
+                                    <Link to={`/detail/${producto.id}`}>
+                                        <Button variant="outline-secondary"> Detalle Producto </Button>
+                                    </Link>
+                                <hr/>
+                            </div>
+                            <div className="text-center">
+                                <Link to={`/cart/${producto.id}`}>
+                                    <Button variant="outline-secondary"> Agregar Carrito </Button>
+                                </Link>
+                            </div>
+                        </Card.Body>
+                    </Card>
         </div>       
     );
 }    
 
-
-
- //<div className="card" key={producto.id}>
- //           <img src={producto.image} alt= {producto.nombre}/>
-//            <div className="card-body">
-//                <h4 className="card-title"> {producto.nombre} </h4>
- //               <p className="card-text"> $ {producto.precio} </p>
- //               <Button variant="outline-warning">Agregar</Button>
- //           </div>
- //       </div>             

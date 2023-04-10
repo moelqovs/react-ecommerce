@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container,Navbar,Form,Nav,Button } from "react-bootstrap";
 import { CarWidget } from "../CarWidget/CarWidget";
 import "./NavBar.css";
+import { Link } from 'react-router-dom';
 
 
 export const NavBar = () => {
@@ -13,21 +14,24 @@ export const NavBar = () => {
                 <Navbar.Toggle aria-controls="Brand" />
                 <Navbar.Collapse id="navbarScroll">
                 <Nav
-                    className="me-auto my-2 my-lg-0"
+                    className=" text-center d-flex align-items-center me-auto center contenedor-nav"
                     style={{ maxHeight: '100px'}}
                     navbarScroll
                 >
-                    <Nav.Link href="#action1">Home</Nav.Link>
-                    <Nav.Link href="#action2">Muebles</Nav.Link>
-                    <Nav.Link href="#action3">Iluminación</Nav.Link>
-                    <Nav.Link href="#action4">Ambientes</Nav.Link>
-                    <Nav.Link href="#action5">Contacto</Nav.Link>
+                    <Link to='/' className='me-auto text-decoration-none text-light enlace'> Home </Link>
+                    <Link to='/categoria/camas' className='me-auto text-decoration-none text-light enlace'>Camas</Link>
+                    <Link to='/categoria/sofas' className='me-auto text-decoration-none text-light enlace'>Sofás</Link>
+                    <Link to='/categoria/comedor' className='me-auto text-decoration-none text-light enlace'>Comedor</Link>
+                    <Link to='/categoria/decoracion' className='me-auto text-decoration-none text-light enlace'>Decoración</Link>
                 </Nav>
-                <Form className="d-flex">
-                    <Button variant="outline-warning">
-                        <CarWidget/>
-                    </Button>
-                </Form>
+                <Link to='/cart'>
+                    <Form className="d-flex">
+                        <Button variant="outline-success">
+                            <CarWidget/>
+                        </Button>
+                    </Form>
+                </Link>
+                
                 </Navbar.Collapse>
             </Container>
             </Navbar>     
