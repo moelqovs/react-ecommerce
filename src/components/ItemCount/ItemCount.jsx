@@ -1,17 +1,40 @@
-//import { Button } from "react-bootstrap";
+import { useState } from "react"
+import { Button } from "react-bootstrap"
+import "./ItemCount.css"
 
-//export const ItemCount = ({initial=1, stock=10, min=1}) => {
 
-//const { contador, increment, decrement, reset } = useCount (11,10,1)
 
- //   return (
- //       <div>
- //           <h3> Cantidad : {contador} </h3>
- //           <hr/>
- //           <Button onClick={increment} variant="outline-primary"> + </Button>
- //           <Button onClick={decrement} variant="outline-primary"> - </Button>
- //           <Button onClick={reset} variant="outline-secondary"> Agregar Carrito </Button>
- //       </div>
- //  )
+export const ItemCount = ({ initial, stock, onAdd }) => {
 
-//}
+    const [quantity, setQuantity] = useState (initial)
+
+    const increment = () => {
+        if (quantity < stock) {
+            setQuantity(quantity + 1)
+        }
+    }
+
+    const decrement = () => {
+        if (quantity > 1) { 
+            setQuantity (quantity - 1)
+        }
+    }
+
+
+    return(
+        <div className="counter">
+            <div className="controls">
+                <h4 className="number text-center"> {quantity} </h4>
+                <div className="btn button">
+                <Button variant="secondary selector" onClick={decrement}> - </Button>
+                <Button variant="secondary selector" onClick={increment}> + </Button>
+                </div>
+            </div>
+            <div>
+                <Button variant="outline-success button" onClick={() => onAdd(quantity)} disabled={!stock}> 
+                    Agregar al carrito
+                </Button>
+            </div>
+        </div>
+    )
+}

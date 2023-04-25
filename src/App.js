@@ -6,6 +6,7 @@ import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetail
 import { CartContainer } from './components/CartContainer/CartContainer.jsx';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Footer } from './components/Footer/Footer';
+import { CartProvider } from './context/CartContext.jsx';
 
 
 
@@ -13,23 +14,26 @@ import { Footer } from './components/Footer/Footer';
 function App() {
   
   return (
-    <BrowserRouter>
-
-      <div>
-          <div className='Brand'>
-            <img src={Brand} alt='Brand' className='imgBrand'/>
-          </div>
-        <NavBar/>
-          <Routes>
-            <Route path='/' element={ <ItemListContainer/> }/>
-            <Route path='/detail/:pid' element={ <ItemDetailContainer/> }/>
-            <Route path='/categoria/:cid' element={ <ItemListContainer/> }/>
-            <Route path='/cart' element={ <CartContainer/> }/>
-            <Route path='*' element={ <Navigate to='/' /> } />
-          </Routes>
-        <Footer/>
-      </div>
-    </BrowserRouter>
+    
+      <BrowserRouter>
+        <CartProvider>
+        <div>
+              <div className='Brand'>
+                <img src={Brand} alt='Brand' className='imgBrand'/>
+              </div>
+            <NavBar/>
+              <Routes>
+                <Route path='/' element={ <ItemListContainer/> }/>
+                <Route path='/detail/:pid' element={ <ItemDetailContainer/> }/>
+                <Route path='/categoria/:cid' element={ <ItemListContainer/> }/>
+                <Route path='/cart' element={ <CartContainer/> }/>
+                <Route path='*' element={ <Navigate to='/' /> } />
+              </Routes>
+            <Footer/>
+            </div>
+        </CartProvider>
+      </BrowserRouter>
+ 
   );
 }
 

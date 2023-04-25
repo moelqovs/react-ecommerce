@@ -1,13 +1,14 @@
-import "./ItemDetail.css";
+import"./ItemDetail.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card } from "react-bootstrap";
+
 
 
 export const ItemDetail = ({product}) => {
 
     return (
-        <div className="title-detail">
-            <h1> Detalle del Producto </h1>
+        <div>
+            <h1  className="title-detail">Detalle del Producto </h1>
             <div>
             <Card style={{ width: '30rem' }}>
                     <Card.Img src={process.env.PUBLIC_URL+product.image} alt={product.id} variant="top" style={{ height: '30rem' }}/>

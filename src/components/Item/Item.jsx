@@ -19,12 +19,6 @@ export const Item = ({producto}) => {
                                     <Link to={`/detail/${producto.id}`}>
                                         <Button variant="outline-secondary"> Detalle Producto </Button>
                                     </Link>
-                                <hr/>
-                            </div>
-                            <div className="text-center">
-                                <Link to={`/cart/${producto.id}`}>
-                                    <Button variant="outline-secondary"> Agregar Carrito </Button>
-                                </Link>
                             </div>
                         </Card.Body>
                     </Card>
