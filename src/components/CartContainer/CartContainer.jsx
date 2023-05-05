@@ -8,7 +8,6 @@ import {CartItem} from "../CartItem/CartItem"
 
 
 export const CartContainer = () => {
-        console.log(CartContainer)
         
         const {cart, totalPrice, clearCart } = useContext (CartContext)
         console.log(cart)
@@ -26,7 +25,7 @@ export const CartContainer = () => {
 
         return (
                 <>
-                        { cart.map ( p => < CartItem key={p.id} p = {p} /> ) }
+                        { cart.map ( producto => < CartItem key={producto.id} producto = {producto} /> ) }
                         <h3> Total Compra: ${totalPrice} </h3>
                         <Button onClick={() => clearCart() } variant="outline-success"> Descartar Carrito </Button>
                         <Link to='/checkout' className="me-auto text-decoration-none text-dark m-lg-4 enlacen"> Checkout </Link>

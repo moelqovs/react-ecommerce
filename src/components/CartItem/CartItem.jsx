@@ -1,10 +1,11 @@
 import { Card, Button } from "react-bootstrap";
 import { CartContext } from "../../context/CartContext";
+import { useContext } from "react";
 
 export const CartItem = ( {product}) => {
 
 
-const [removeItem ]  = CartContext()    
+    const { removeItem } = useContext(CartContext) 
 
 
     return (
@@ -24,3 +25,7 @@ const [removeItem ]  = CartContext()
         </div>
     )
 }
+
+
+
+//process.env.PUBLIC_URL+

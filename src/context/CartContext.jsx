@@ -10,17 +10,18 @@ export const CartProvider = ({children}) => {
 
 
     const addItem = (item, quantity) => {
-        if(!isInCart(item.id)){
-            setCart (cart.map(product => {
-                return product.id === item.id ? 
-                { ...product, quantity: product.quantity + quantity } 
-                : 
-                product
-            }))
-        }else{
-            setCart ([...cart, { ...item, quantity }])
+        if (!isInCart(item.id)) {
+            setCart([...cart, { ...item, quantity }]);
+        } else {
+            setCart(
+                cart.map((product) =>
+                    product.id === item.id
+                        ? { ...product, quantity: product.quantity + quantity }
+                        : product
+                )
+            );
         }
-    }
+    };
 
 
     const totalPrice = () => {
@@ -63,3 +64,22 @@ export const CartProvider = ({children}) => {
         </CartContext.Provider>
     )
 }
+
+
+
+
+
+
+
+//const addItem = (item, quantity) => {
+//    if(!isInCart(item.id)){
+//        setCart (cart.map(product => {
+//            return product.id === item.id ? 
+//            { ...product, quantity: product.quantity + quantity } 
+//            : 
+//            product
+//        }))
+//    }else{
+//        setCart ([...cart, { ...item, quantity }])
+//    }
+//}
