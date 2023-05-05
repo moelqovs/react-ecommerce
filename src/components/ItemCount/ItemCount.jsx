@@ -32,9 +32,9 @@ export const ItemCount = ({ initial, stock, onAdd }) => {
                 </div>
             </div>
             <div>
-                <button onClick={() => onAdd(quantity)} disabled={!stock}> 
+                <Button variant="outline-success button" onClick={() => onAdd(quantity)} disabled={!stock}> 
                     Agregar al carrito
-                </button>
+                </Button>
             </div>
         </div>
     )
@@ -42,4 +42,3 @@ export const ItemCount = ({ initial, stock, onAdd }) => {
 
 
 
-//variant="outline-success button"

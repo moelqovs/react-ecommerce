@@ -1,8 +1,7 @@
 import"./ItemDetail.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import { useState, useContext } from "react";
-import { Button } from "bootstrap";
 import { ItemCount } from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";

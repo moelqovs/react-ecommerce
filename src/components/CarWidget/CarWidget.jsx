@@ -9,12 +9,17 @@ import { Link } from 'react-router-dom';
 export const CarWidget = () => {
     const { totalQuantity } = useContext (CartContext)
 
+    console.log(totalQuantity)
+
     return(
         <>
-        <Link to='/cart' className='cartWidget' style={{display: totalQuantity > 0 ? 'block': 'none'}}>
-            <FontAwesomeIcon icon={faCartShopping} />
-            {totalQuantity}
-        </Link>
+            <Link to='/cart' className='cartWidget'>
+                <FontAwesomeIcon icon={faCartShopping} />
+                <span> { totalQuantity() || '' } </span>
+            </Link>
         </>
     );
 }
+
+
+// style={{display: totalQuantity > 0 ? 'block': 'none'}}

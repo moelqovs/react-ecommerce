@@ -1,8 +1,6 @@
 import { createContext, useState } from "react";
 
-export const CartContext = createContext({
-    cart:[]
-})
+export const CartContext = createContext([])
 
 
 export const CartProvider = ({children}) => {
@@ -10,12 +8,28 @@ export const CartProvider = ({children}) => {
     const [cart, setCart] = useState ([])
     console.log(cart)
 
+
     const addItem = (item, quantity) => {
         if(!isInCart(item.id)){
-            setCart (prev => [...prev, {...item, quantity}])
+            setCart (cart.map(product => {
+                return product.id === item.id ? 
+                { ...product, quantity: product.quantity + quantity } 
+                : 
+                product
+            }))
         }else{
-            console.error('producto agregado')
+            setCart ([...cart, { ...item, quantity }])
         }
+    }
+
+
+    const totalPrice = () => {
+        return cart.reduce((prev, act) => prev + act.quantity * act.price, 0)
+    }
+
+    
+    const totalQuantity = () =>{
+        return cart.reduce((acumulador, productoActual) => acumulador + productoActual.quantity, 0)
     }
 
 
@@ -31,12 +45,20 @@ export const CartProvider = ({children}) => {
 
 
     const isInCart = (itemId) => {
-        return cart.some(prod => prod.id ===itemId)
+        return cart.some(prod => prod.id === itemId)
     }
 
 
     return(
-        <CartContext.Provider value={{cart, addItem, removeItem,clearCart }}>
+        <CartContext.Provider value={ { 
+            isInCart, 
+            addItem, 
+            removeItem, 
+            clearCart, 
+            totalPrice, 
+            totalQuantity,
+            cart
+            }}>
             { children }
         </CartContext.Provider>
     )
