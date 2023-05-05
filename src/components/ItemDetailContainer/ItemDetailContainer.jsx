@@ -1,39 +1,27 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {ItemDetail} from "../ItemDetail/ItemDetail";
-import data from "../data/productos.json";
 import { useParams } from "react-router-dom";
-import { ItemCount } from "../ItemCount/ItemCount";
-import { Link } from 'react-router-dom';
-import { Button } from "react-bootstrap"
 import"./ItemDetailContainer.css"
-import { CartContext } from "../../context/CartContext";
+import { doc, getDoc, getFirestore } from "firebase/firestore"; 
+//import data from "../data/productos.json";
 
 
 export const ItemDetailContainer = () => {
 
     const [ product, setProduct ]= useState ({})
-    const [quantityAdd, setQuantityAdd ]=useState(0)
     const [loading,setLoading] = useState(true);
-    const { addItem } = useContext(CartContext)
     const { pid } = useParams()
+    console.log(product)
 
-
-    const handleOnAdd = (quantity)=> {
-        setQuantityAdd (quantity)
-            const item = {
-                product
-            }
-        addItem (item, quantity)
-    }
-
-
-    const detailProduct = (id) => {
-        return new Promise ((resolve, reject) => {
-            setTimeout(() => {
-                resolve ( id ? data.find(prod=>prod.id===id) : data)
-            }, 1100);
-        })
-    }
+    useEffect (()=>{
+        const db = getFirestore ()
+        const queryDoc = doc( db,'productos',pid)
+        
+        getDoc (queryDoc)
+        .then(resp => setProduct ({id: resp.id, ...resp.data() }))
+        .catch(error => console.log(error))
+        .finally(() => setLoading(false))
+    },[pid])
 
 
     useEffect(()=>{
@@ -43,37 +31,41 @@ export const ItemDetailContainer = () => {
     },[])
 
 
-    useEffect(()=>{
-        detailProduct(pid)
-        .then((res)=>{
-            setProduct(res);
-        }) 
-    }, [pid])
-
-
     return (
             <>
-            (
                 {
                     loading ?
                     <h2>Cargando...</h2>
                     :
                     <div className="itemdetailcontainer">
                         <ItemDetail product={product}/>
-                        <aside className="itemcount">
-                        {
-                            quantityAdd > 0 ? (
-                                <Link to='/cart' className="option">
-                                    <Button variant="success"> Comprar ahora </Button>
-                                </Link>
-                            ):(
-                                <ItemCount initial={1} stock={10} onAdd={handleOnAdd}/>
-                            )
-                        }
-                        </aside>
                     </div>
                 }
-            )
         </>
     )
 }
+
+
+
+
+
+
+
+
+
+
+//    const detailProduct = (id) => {
+//        return new Promise ((resolve, reject) => {
+//            setTimeout(() => {
+//                resolve ( id ? data.find(prod=>prod.id===id) : data)
+//            }, 1100);
+//        })
+//    }
+
+
+//    useEffect(()=>{
+//        detailProduct(pid)
+//        .then((res)=>{
+//            setProduct(res);
+//        }) 
+//    }, [pid])

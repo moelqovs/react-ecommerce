@@ -7,6 +7,7 @@ import "./ItemCount.css"
 export const ItemCount = ({ initial, stock, onAdd }) => {
 
     const [quantity, setQuantity] = useState (initial)
+    console.log(quantity)
 
     const increment = () => {
         if (quantity < stock) {
@@ -31,10 +32,14 @@ export const ItemCount = ({ initial, stock, onAdd }) => {
                 </div>
             </div>
             <div>
-                <Button variant="outline-success button" onClick={() => onAdd(quantity)} disabled={!stock}> 
+                <button onClick={() => onAdd(quantity)} disabled={!stock}> 
                     Agregar al carrito
-                </Button>
+                </button>
             </div>
         </div>
     )
 }
+
+
+
+//variant="outline-success button"

@@ -2,15 +2,16 @@ import { useContext } from "react"
 import { CartContext } from "../../context/CartContext"
 import { Link } from "react-router-dom"
 import { Button } from "react-bootstrap"
-import CartItem from "../CartItem/CartItem"
+import {CartItem} from "../CartItem/CartItem"
 
 
 
 
 export const CartContainer = () => {
-
+        console.log(CartContainer)
+        
         const {cart, clearCart, totalQuantity, total } = useContext (CartContext)
-
+        console.log(cart)
 
         if ( totalQuantity === 0 ){
                 return(
