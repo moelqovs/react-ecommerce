@@ -7,6 +7,7 @@ import { CartContainer } from './components/CartContainer/CartContainer.jsx';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Footer } from './components/Footer/Footer';
 import { CartProvider } from './context/CartContext.jsx';
+import { CheckForm } from './components/CheckForm/CheckForm';
 
 
 
@@ -27,6 +28,7 @@ function App() {
                 <Route path='/detail/:pid' element={ <ItemDetailContainer/> }/>
                 <Route path='/categoria/:cid' element={ <ItemListContainer/> }/>
                 <Route path='/cart' element={ <CartContainer/> }/>
+                <Route path='/contacto' element={ <CheckForm/>}/>
                 <Route path='*' element={ <Navigate to='/' /> } />
               </Routes>
             <Footer/>

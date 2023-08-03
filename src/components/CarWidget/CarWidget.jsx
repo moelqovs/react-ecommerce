@@ -22,4 +22,3 @@ export const CarWidget = () => {
 }
 
 
-// style={{display: totalQuantity > 0 ? 'block': 'none'}}

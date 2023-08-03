@@ -23,10 +23,10 @@ export const ItemDetail = ({product}) => {
 
 
     return (
-        <div>
+        <div className="itle-detail">
             <h1  className="title-detail">Detalle del Producto </h1>
             <section className="item-detail">
-            <div>
+            <div> 
             <Card style={{ width: '30rem' }}>
                     <Card.Img src={process.env.PUBLIC_URL+product.image} alt={product.id} variant="top" style={{ height: '30rem' }}/>
                         <Card.Body className="card-body">

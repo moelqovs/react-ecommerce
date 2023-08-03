@@ -2,6 +2,7 @@ import { Card, Button } from "react-bootstrap";
 import { CartContext } from "../../context/CartContext";
 import { useContext } from "react";
 
+
 export const CartItem = ( {product}) => {
 
 
@@ -15,17 +16,17 @@ export const CartItem = ( {product}) => {
                     <Card.Img src={process.env.PUBLIC_URL+product.image} alt={product.id} variant="top" style={{ height: '30rem' }}/>
                         <Card.Body className="card-body">
                         <Card.Title className="text-center"> {product.nombre} </Card.Title>
-                        <Card.Text className="text-center"> $ {product.quantity} </Card.Text>
-                        <Card.Text className="text-center"> $ {product.precio} </Card.Text>
+                        <Card.Text className="text-center"> Precio unidad : $ {product.precio} </Card.Text>
                     </Card.Body>
             </Card>
             </div>
-            <p> Subtotal : $ {product.quantity * product.precio} </p>
-            <Button variant="secondary" onClick={ () => removeItem (product.id)}> Eliminar Item </Button>
+            <div className="table">
+                <h4> Cantidad : {product.quantity} </h4>
+                <h4> Subtotal : $ {product.quantity * product.precio} </h4>
+                    <div>
+                        <Button variant="outline-secondary" onClick={ () => removeItem (product.id, product.quantity)}> Eliminar Item </Button>
+                    </div>
+            </div>
         </div>
     )
 }
-
-
-
-//process.env.PUBLIC_URL+

@@ -23,6 +23,7 @@ export const NavBar = () => {
                     <Link to='/categoria/sofas' className='me-auto text-decoration-none text-light m-lg-4 enlace'>Sofás</Link>
                     <Link to='/categoria/comedor' className='me-auto text-decoration-none text-light m-lg-4 enlace'>Comedor</Link>
                     <Link to='/categoria/decoracion' className='me-auto text-decoration-none text-light m-lg-4 enlace'>Decoración</Link>
+                    <Link to='/contacto' className='me-auto text-decoration-none text-light m-lg-4 enlace'>Contacto</Link>
                 </Nav>
                 <Link to='/cart'>
                     <Form className="d-flex">
